@@ -18,5 +18,5 @@ export class Feriado {
   dia: number;
 
   @Column({ nullable: true })
-  feriado_movel: string; // ex: "carnaval"
+  feriado_movel: string;
 }

@@ -4,6 +4,7 @@ import { FeriadosController } from './feriados.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Feriado } from './feriados.entity';
 
+
 @Module({
   imports: [TypeOrmModule.forFeature([Feriado])],
   providers: [FeriadosService],
