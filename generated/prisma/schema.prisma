@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Feriado {
+  id   Int      @id @default(autoincrement())
+  data DateTime
+  nome String
+  tipo String
+}
