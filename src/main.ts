@@ -1,10 +1,10 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app/app.module';
+import { FeriadoModule } from './modules/feriados.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(FeriadoModule);
 
   const config = new DocumentBuilder()
     .setTitle('API de Feriados')
