@@ -1,7 +1,8 @@
 import { NestFactory } from '@nestjs/core';
 import { FeriadoModule } from './modules/feriados.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(FeriadoModule);
@@ -13,7 +14,8 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
-
+  console.log(process.env.PORT);
+  console.log(process.env.DB_USERNAME);
   await app.listen(process.env.PORT ?? 4000);
 }
 bootstrap();

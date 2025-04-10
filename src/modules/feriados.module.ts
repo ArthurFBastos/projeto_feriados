@@ -4,7 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { FeriadoModel } from '../models/feriados.model';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([FeriadoModel])],
+  imports: [],
   controllers: [FeriadoController]
 })
 export class FeriadoModule {}

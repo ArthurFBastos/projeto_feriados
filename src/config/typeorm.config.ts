@@ -1,15 +1,17 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { join } from 'path';
 
 const options: DataSourceOptions = {
   type: 'postgres',
-  port: parseInt(process.env.DB_PORT || '5432', 10),
-  username: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE,
-  synchronize: process.env.DB_SYNCHRONIZE === 'true',
-  entities: [__dirname, '..', '**', '*.model.{ts,js}'],
-};
+  host: "localhost",
+  port: 5434,
+  username: "postgres",
+  password: "postgres",
+  database: "feriadosDB",
+  synchronize: true,
+  logging: true,
+  entities: [join(__dirname, '..', '**', '*.model.ts')],};
 
 export const typeOrmConfig = async (): Promise<TypeOrmModuleOptions> => options;
 

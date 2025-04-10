@@ -5,8 +5,8 @@ import { Repository } from 'typeorm';
 
 @Controller('feriados')
 export class FeriadoController {
-  constructor(@InjectRepository(FeriadoModel) private model: Repository<FeriadoModel>) {}
-
+  constructor() {}
+  //@InjectRepository(FeriadoModel) private model: Repository<FeriadoModel>
   @Post()
   public create(): any {
     return {
@@ -14,13 +14,13 @@ export class FeriadoController {
     };
   }
 
-  @Get()
-  public async getAll(): Promise<{ data: FeriadoModel[] }> {
-    const list = await this.model.find();
-    return {
-      data: list,
-    };
-  }
+  // @Get()
+  // public async getAll(): Promise<{ data: FeriadoModel[] }> {
+  //   const list = await this.model.find();
+  //   return {
+  //     data: list,
+  //   };
+  // }
 
   @Get(':id')
   public getOne(): any {
